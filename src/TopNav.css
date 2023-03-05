@@ -1,0 +1,23 @@
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+
+    width: 100%;
+    height: 70px;
+    padding: 2px 20px;
+    border-radius: 5px;
+
+    font-size: 24px;
+    text-align: center;
+    z-index: 100;
+    background: rgb(195, 198, 201);
+}
+
+.navBrand {
+    font-weight: bold;
+    width: 300px;
+    max-width: 300px;
+    align-items: start;
+}
