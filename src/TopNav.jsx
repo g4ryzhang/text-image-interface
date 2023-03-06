@@ -1,46 +1,45 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useState } from 'react';
 import './TopNav.css';
 
 const TopNav = props => {
-    const menuItems = ['Home', 'Community']
-  return (
-    // <Navbar bg="light" expand="lg" fixed="top start" >
-    //   <Container>
-    //     <Navbar.Brand href="#home">Image Generator</Navbar.Brand>
-    //     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    //     <Navbar.Collapse id="basic-navbar-nav">
-    //       <Nav className="me-auto">
-    //         <Nav.Link href="#home">Home</Nav.Link>
-    //         <Nav.Link href="#link">Community</Nav.Link>
-    //         <NavDropdown title="More" id="basic-nav-dropdown">
-    //           <NavDropdown.Item href="#action/3.1">Products</NavDropdown.Item>
-    //           <NavDropdown.Item href="#action/3.2">
-    //             Vision
-    //           </NavDropdown.Item>
-    //           <NavDropdown.Item href="#action/3.3">About us</NavDropdown.Item>
-    //           <NavDropdown.Divider />
-    //           <NavDropdown.Item href="#action/3.4">
-    //             Separated link
-    //           </NavDropdown.Item>
-    //         </NavDropdown>
-    //       </Nav>
-    //     </Navbar.Collapse>
-    //   </Container>
-    // </Navbar>
-    <div className='navContainer'>
-        <div className='navBrand'>
-            Image Generator
-        </div>
-        {menuItems.map((item, k) => (
-            <div className='itemContainer' key={k}>
-                {item}
+    const [query, setQuery] = useState('');
+
+    const searchCommunity = e => e.preventDefault();
+
+    return (
+        <div className='navContainer'>
+            <div className='navMenu'>
+                {/* <div className='navBrand'>
+                    {props.brand}
+                </div> */}
+                {props.navItems.map((item, k) => (
+                    <button className='navItem' key={k}>
+                        {item}
+                    </button>
+                ))}
             </div>
-        ))}
-    </div>
-  );
+            
+            {/* <div className='commSearch'> */}
+                <form className='comSearchForm' onSubmit={searchCommunity}>
+                    <div className='comInputContainer'>
+                        <input
+                            type='text'
+                            name='query'
+                            className='comInput'
+                            placeholder={`Community Search`}
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                        />
+                        <i style={{fontSize: '1.2rem', margin: 'auto 0'}} class="fa-solid fa-magnifying-glass"></i>
+                        <i ></i>
+                    </div>
+                    {/* <button type='submit' className='searchButton'>
+                        search
+                    </button> */}
+                </form>
+            {/* </div> */}
+        </div>
+    );
 }
 
 export default TopNav;

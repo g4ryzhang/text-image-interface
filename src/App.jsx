@@ -1,59 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TopNav from './TopNav'
-import SearchPhotos from './searchPhoto';
-// import Sidebar from './Sidebar'
-import {Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
+import TopSection from './TopSection';
+import Card from './Card';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import GenerateBar from './GenerateBar';
+// images
+import reactLogo from './assets/react.svg';
+import redBg from './assets/red.jpg';
+import purpleBg from './assets/purple.jpg';
+import exp from './assets/exp.webp';
+import teddy from './assets/teddy.png';
+import pets from './assets/pets.webp';
+import sunrise from './assets/sunrise.webp';
+import cat from './assets/cat.webp';
+import comic from './assets/comic.webp';
+import computer from './assets/computer.webp';
+import shiba from './assets/shiba.webp';
 
+const imgs = [ comic, computer, shiba, exp, teddy, pets, sunrise, reactLogo, redBg, cat, purpleBg,];
+
+const topNavItems = ['Home', 'Gallery', 'Community', 'Learn more'];
+const brand = ['Image Gen'];
 
 function App() {
-    const [count, setCount] = useState(0)
-
     return (
         <>
-            <TopNav></TopNav>
+            <TopNav navItems={topNavItems} brand={brand} />
             <div className='App'>
                 <div className='sidebarWrapper'>
-                    <Sidebar>
+                    <Sidebar defaultCollapsed>
                         <Menu icon={<i class="fa-solid fa-user"></i>}>
-                            <SubMenu label='Charts' icon={<i class="fa-solid fa-user"></i>}>
-                            <MenuItem> Pie charts </MenuItem>
-                            <MenuItem> Line charts </MenuItem>
+                            <SubMenu label='Recent' icon={<i class="fa-solid fa-clock-rotate-left"></i>}>
+                                <MenuItem> dog </MenuItem>
+                                <MenuItem> cat </MenuItem>
+                                <MenuItem> more history... </MenuItem>
                             </SubMenu>
-                            <MenuItem> Documentation </MenuItem>
-                            <MenuItem> Calendar </MenuItem>
+                            <MenuItem icon={<i class="fa-solid fa-book"></i>}> Documentation </MenuItem>
+                            <MenuItem icon={<i class="fa-regular fa-circle-question"></i>}> FAQ </MenuItem>
                         </Menu>
                     </Sidebar>
                 </div>
                 <div className='mainContent'>
-                    <SearchPhotos />
-                    {/* <div>
-                        <a href='https://vitejs.dev' target='_blank'>
-                            <img src='/vite.svg' className='logo' alt='Vite logo' />
-                        </a>
-                        <a href='https://reactjs.org' target='_blank'>
-                            <img src={reactLogo} className='logo react' alt='React logo' />
-                        </a>
+                    <TopSection />
+                    <Card pics={imgs}/>
+                    <div className='bottomSection'>
+                        <GenerateBar placeholder={`Click on an image to generate with their prompts!`}/>
                     </div>
-                    <h1>Vite + React</h1>
-                    <div className='card'>
-                        <button onClick={() => setCount((count) => count + 1)}>
-                            count is {count}
-                        </button>
-                        <p>
-                            Edit <code>src/App.jsx</code> and save to test HMR
-                        </p>
-                    </div>
-                    <p className='read-the-docs'>
-                        Click on the Vite and React logos to learn more
-                    </p> */}
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default App
+export default App;

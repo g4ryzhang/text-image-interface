@@ -1,0 +1,43 @@
+.label {
+    font-size: 1.5rem;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 40px;
+}
+
+.title {
+    font-size: 4.4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.searchBg {
+    width: 100%;
+    height: 400px;
+    background-color: lightgrey;
+    /* background-image: url(assets/ziming-zhang-0XWOWsRdlb8-unsplash.jpg);
+    background-size: cover; */
+}
+
+.branding {
+    color: black;
+    width: 70%;
+    height: 200px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    text-align: start;
+}
+
+.brandName {
+    font-size: 3rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: dimgray;
+}
