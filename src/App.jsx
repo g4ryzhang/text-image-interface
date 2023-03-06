@@ -18,7 +18,7 @@ import comic from './assets/comic.webp';
 import computer from './assets/computer.webp';
 import shiba from './assets/shiba.webp';
 
-const imgs = [ comic, computer, shiba, exp, teddy, pets, sunrise, reactLogo, redBg, cat, purpleBg,];
+const imgs = [ cat,  computer, shiba, exp, teddy, pets, sunrise, reactLogo, redBg, comic, purpleBg,];
 
 const topNavItems = ['Home', 'Gallery', 'Community', 'Learn more'];
 const brand = ['Image Gen'];
@@ -29,17 +29,20 @@ function App() {
             <TopNav navItems={topNavItems} brand={brand} />
             <div className='App'>
                 <div className='sidebarWrapper'>
-                    <Sidebar defaultCollapsed>
-                        <Menu icon={<i class="fa-solid fa-user"></i>}>
-                            <SubMenu label='Recent' icon={<i class="fa-solid fa-clock-rotate-left"></i>}>
-                                <MenuItem> dog </MenuItem>
-                                <MenuItem> cat </MenuItem>
-                                <MenuItem> more history... </MenuItem>
-                            </SubMenu>
-                            <MenuItem icon={<i class="fa-solid fa-book"></i>}> Documentation </MenuItem>
-                            <MenuItem icon={<i class="fa-regular fa-circle-question"></i>}> FAQ </MenuItem>
-                        </Menu>
-                    </Sidebar>
+                    <div>
+                        <Sidebar defaultCollapsed>
+                            <Menu icon={<i class="fa-solid fa-user"></i>}>
+                                <SubMenu label='Recent' icon={<i class="fa-solid fa-clock-rotate-left"></i>}>
+                                    <MenuItem> dog </MenuItem>
+                                    <MenuItem> cat </MenuItem>
+                                    <MenuItem> more history... </MenuItem>
+                                </SubMenu>
+                                <MenuItem icon={<i class="fa-solid fa-book"></i>}> Documentation </MenuItem>
+                                <MenuItem icon={<i class="fa-regular fa-circle-question"></i>}> FAQ </MenuItem>
+                            </Menu>
+                        </Sidebar>
+                    </div>
+                    
                 </div>
                 <div className='mainContent'>
                     <TopSection />

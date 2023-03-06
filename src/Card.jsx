@@ -13,7 +13,7 @@ const Card = (props) => {
                     height='90%'
                 ></img>
                 <div className='imgInfo'>
-                    <div className='userName'>{`By: user${i}`}</div>
+                    <div className='userName'>{`by user${i}`}</div>
                     <div className='promptSection'>
                         <div className='promptTag'>
                             promptA

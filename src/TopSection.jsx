@@ -20,6 +20,10 @@ export default function TopSection() {
                 </div>
             </div>
             <GenerateBar placeholder={`Try 'galaxy'`}/>
+            <div className='hint'>
+                <div>See <a className='link'>examples</a>,&nbsp;</div>
+                <div>or get inspirations from featured generations below!</div>
+            </div>
         </div>
     );
 }
