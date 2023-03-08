@@ -4,9 +4,19 @@
     height: 50px;
     /* padding: 0 20px; */
     margin: 0 auto;
+    grid-template-columns: 1fr auto;
+    grid-gap: 0.5rem;
+    align-items: center;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.hideBar {
+    top: -300px;
 }
 
 .inputContainer {
+    box-sizing: border-box;
     display: flex;
     background-color: white;
     border-radius: 10px;
@@ -14,12 +24,15 @@
     padding: 0 1.5rem;
 }
 
+.inputContainer > i {
+    font-size: 1.5rem;
+    margin: auto 0;
+}
+
 .input {
-    font-size: 1.2rem;
     padding: 0 1rem;
-    /* line-height: 2rem; */
     background-color: white;
-    height: 3rem;
+    height: calc(2.5rem - 3.5px);
     border: 0;
     color: black;
     width: 100%;
@@ -35,21 +48,37 @@
     color: white;
     padding: 0 2rem;
     border: 1px solid white;
-    border-radius: 20px;
-    font-size: 1.2rem;
+    /* border-radius: 20px; */
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.25s;
-    height: 3rem
+    height: 2.5rem
 }
 
 .searchButton:hover {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .form {
-        grid-template-columns: 1fr auto;
-        grid-gap: 1rem;
+        width: 80%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 2px; 
         align-items: center;
+        font-size: 1rem;
+    }
+    
+    .input {
+        height: calc(2rem - 3.5px);
+        font-size: 1rem;
+    }
+
+    .inputContainer > i {
+        font-size: 1rem;
+    }
+
+    .searchButton {
+        height: 2rem;
     }
 }

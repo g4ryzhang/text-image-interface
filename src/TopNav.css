@@ -66,7 +66,12 @@
     background-color: white;
     border-radius: 4px;
     border: 2px solid darkgrey;
-    padding: 0 1rem;
+    padding: 0 0 0 1rem;
+}
+
+.comInputContainer > i {
+    font-size: 1.2rem;
+    margin: auto 10px auto -0.5rem;
 }
 
 .comInput {
@@ -83,4 +88,38 @@
 .comInput:focus {
     border: 0;
     outline: none;
+}
+
+@media (max-width: 768px) {
+    .comSearchForm * {
+        background-color: transparent;
+    }
+
+    .comSearchForm {
+        width: 40px;
+        transition: width 0.75s;
+    }
+
+    .comInputContainer {
+        border: 0.5px solid white;
+        padding: 0 0 0 0.5rem;
+        transition: padding 0.25s, background-color 0.25s;
+    }
+
+    .comInputContainer > i {
+        color: white;
+    }
+
+    .comSearchForm:hover {
+        width: 220px;
+    }
+
+    .comInputContainer:hover {
+        padding: 0 0 0 1rem;
+        background-color: white;
+    }
+
+    .comInputContainer:hover > i{
+        color: black;
+    }
 }

@@ -48,12 +48,14 @@
 
 .bottomSection {
     position: fixed;
-    bottom: 10px;
+    top: calc(2.5rem + 3px);
     width: 100%;
 }
 
 @media (max-width: 768px) {
-    .bottomSection {
-        bottom: 3rem;
+    .sidebarWrapper {
+        left: -15px;
+        width: 60px;
+        overflow: hidden;
     }
 }

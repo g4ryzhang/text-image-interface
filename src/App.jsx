@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TopNav from './TopNav'
@@ -24,6 +25,20 @@ const topNavItems = ['Home', 'Gallery', 'Community', 'Learn more'];
 const brand = ['Image Gen'];
 
 function App() {
+    const [ showStickyBar, setShowStickyBar ] = useState(false);
+
+    useEffect(() => {
+        document.addEventListener('scroll', (e) => {
+            if (true) {
+                if (window.scrollY >= 158) {
+                    setShowStickyBar(true);
+                } else {
+                    setShowStickyBar(false);
+                }
+            }
+        })
+    }, [])
+
     return (
         <>
             <TopNav navItems={topNavItems} brand={brand} />
@@ -45,11 +60,11 @@ function App() {
                     
                 </div>
                 <div className='mainContent'>
-                    <TopSection />
+                    <TopSection showBar={!showStickyBar}/>
                     <Card pics={imgs}/>
-                    <div className='bottomSection'>
-                        <GenerateBar placeholder={`Click on an image to generate with their prompts!`}/>
-                    </div>
+                    {showStickyBar && <div className='bottomSection'>
+                        <GenerateBar placeholder={`Click on an image to generate with prompts!`} showBar={true}/>
+                    </div>}
                 </div>
             </div>
         </>
