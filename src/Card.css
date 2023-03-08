@@ -52,5 +52,11 @@
 @media (max-width: 768px) {
     .cardList {
         grid-template-columns: 1fr;
+        padding: 20px 20px 100px 50px
+    }
+
+    .cardImage {
+        width: 150px;
+        height: 150px;
     }
 }

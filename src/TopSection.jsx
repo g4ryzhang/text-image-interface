@@ -7,7 +7,7 @@ import GenerateBar from './GenerateBar';
 //   accessKey: '',
 // });
 
-export default function TopSection() {
+export default function TopSection(props) {
 
     return (
         <div className='searchBg'>
@@ -19,7 +19,7 @@ export default function TopSection() {
                     The world's leading text-to-image generative AI
                 </div>
             </div>
-            <GenerateBar placeholder={`Try 'galaxy'`}/>
+            <GenerateBar placeholder={`Try 'galaxy'`} showBar={props.showBar}/>
             <div className='hint'>
                 <div>See <a className='link'>examples</a>,&nbsp;</div>
                 <div>or get inspirations from featured generations below!</div>
